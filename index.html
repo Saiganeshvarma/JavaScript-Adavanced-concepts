@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent" style="padding: 50px; background-color: yellow;">
+        parent
+        <div id="child" style="padding: 50px; background-color: green;">
+            child
+            <div id="gchild" style="padding: 50px; background-color: rebeccapurple;">
+                grand child
+            </div>
+        </div>
+    </div>
+    <script>
+        var parent = document.getElementById("parent")
+        parent.addEventListener("click",()=>{
+            alert("parent clicked")
+            event.stopImmediatePropagation()
+        },false)
+        var child = document.getElementById("child")
+        child.addEventListener("click",()=>{
+            alert("child clicked")
+            event.stopImmediatePropagation()
+
+        },false)
+        var grandchild = document.getElementById("gchild")
+        parent.addEventListener("click",()=>{
+            alert("grandchild clicked")
+            event.stopImmediatePropagation()
+
+        },false)
+
+    </script>
+</body>
+</html>
