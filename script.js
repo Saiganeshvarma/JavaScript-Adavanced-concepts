@@ -1,4 +1,4 @@
-//promises
+//promises in the java script
 
 // create the promise
 
@@ -22,7 +22,7 @@ mypromise
     console.log("code executed");
 })
 
- //try and catch
+ //try and catch in java script
 
 
 try{
