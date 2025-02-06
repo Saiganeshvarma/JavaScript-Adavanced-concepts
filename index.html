@@ -46,8 +46,8 @@
 
 
  <!-- event capturing  -->
- 
- <!-- <!DOCTYPE html>
+
+ <!DOCTYPE html>
  <html lang="en">
  <head>
     <meta charset="UTF-8">
@@ -68,21 +68,24 @@
         var parent = document.getElementById("parent")
         parent.addEventListener("click",()=>{
             alert("parent clicked")
+            event.stopPropagation()
 
         })
         var child = document.getElementById("child")
         child.addEventListener("click",()=>{
             alert("child clicked")
+            event.stopPropagation()
 
 
         })
         var gchild = document.getElementById("gchild")
         gchild.addEventListener("click",()=>{
             alert("grand child clicked")
+            event.stopPropagation()
 
         })
 
     </script>
     
  </body>
- </html> -->
+ </html>
