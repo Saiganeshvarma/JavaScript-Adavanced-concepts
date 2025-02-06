@@ -9,6 +9,7 @@ var mypromise = new Promise((resolve,reject)=>{
         reject("she is wrong")
     }
 })
+// handling the promise
 mypromise
 .then((result)=>{
     console.log(result);
@@ -19,6 +20,7 @@ mypromise
 .finally(()=>{
     console.log("code executed");
 })
+
 // try and catch
 
 
@@ -26,6 +28,6 @@ try{
     var k = fdsfsdfgh
     console.log(k);
 }catch(error){
-    console.log("k is will show errror");
+    console.log("k will show errror");
 
 }
