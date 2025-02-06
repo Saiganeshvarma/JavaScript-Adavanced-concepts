@@ -1,4 +1,5 @@
 //promises
+
 // create the promise
 
 var mypromise = new Promise((resolve,reject)=>{
@@ -24,10 +25,10 @@ mypromise
 // try and catch
 
 
-try{
-    var k = fdsfsdfgh
-    console.log(k);
-}catch(error){
-    console.log("k will show errror");
+// try{
+//     var k = fdsfsdfgh
+//     console.log(k);
+// }catch(error){
+//     console.log("k will show errror");
 
-}
+// }
