@@ -22,13 +22,13 @@ mypromise
     console.log("code executed");
 })
 
-// try and catch
+ //try and catch
 
 
-// try{
-//     var k = fdsfsdfgh
-//     console.log(k);
-// }catch(error){
-//     console.log("k will show errror");
+try{
+  var k = fdsfsdfgh
+   console.log(k);
+ }catch(error){
+     console.log("k will show errror");
 
-// }
+}
