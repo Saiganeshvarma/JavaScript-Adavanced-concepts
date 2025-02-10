@@ -73,3 +73,90 @@
 // for(var i = 0 ; i<array.length ; i++){
 //     console.log(array[i]);
 // }
+
+// var a = 10
+// var a = 20 // redeclared the variable
+// a = 100 // reassigned the variable
+// console.log(a);
+
+// let a = 10
+// let a = 20 // redeclaration cannot
+// a = 100 // reasignement
+
+// const a = 10
+// const a = 40  redeclaration cannot
+//a = 20 reassigment cannot
+
+// string , tostring()
+var str = "java script"
+console.log(str.toString());
+// charat
+console.log(str.charAt(0));
+// tolowercase
+var str1 = "SAI GANESH"
+console.log(str1.toLowerCase());
+// to upper case
+var str2 = "sai ganesh"
+console.log(str2.toUpperCase());
+// indexof
+var str3 = "java script"
+console.log(str3.indexOf("j"));
+
+// startswith
+
+var str4 = "java script"
+console.log(str4.startsWith("java"));
+
+// ends with
+var str5 = "java script"
+console.log(str5.endsWith("pt"));
+
+/// slice
+var str6 = "coders"
+console.log(str6.slice(1,5));
+
+var array = [1,2,3,4,5]
+console.log(array.slice(0,3));
+
+// substring
+
+var str7 = "java script"
+console.log(str7.substring(1,4));
+// replace
+var str8 = "java script"
+console.log(str8.replace("script","c++"));
+
+// trim
+var str9 = "      sai ganesh varma       "
+console.log(str9.trim());
+
+// padStart
+
+var str10 = "sai"
+console.log(str10.padEnd(4,"java"));
+// padend
+console.log(str10.padEnd(9,"java"));
+// repeat
+var str12 = "sai"
+console.log(str12.repeat(100));
+// split
+var str13 = 'java script datas'
+console.log(str13.split(""));
+// concat
+
+var a = "java"
+var b = "script"
+console.log(a.concat(b));
+
+var str14 = "java script"
+console.log(str14.length);
+
+
+// reverse
+
+var rever = "java script"
+console.log(rever.split(" ").reverse().join(" "));
+
+
+
+
