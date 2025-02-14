@@ -224,3 +224,56 @@
 //     console.log(block);
 // }
 // blockScope()
+
+// stack
+
+class Stack{
+    constructor(){
+        this.item = []
+        this.count = 0
+    }
+    push(element){
+        this.item[this.count] = element
+        console.log( ` and the element is ${element} and index value is ${this.count}`);
+        this.count++
+    }
+    pop(){
+        var deletedItem = this.item[this.count-1]
+        console.log(` Deleted Item is ${deletedItem}`);
+        this.count--
+    }
+
+}
+var data = new Stack()
+data.push(100)
+data.push(200)
+data.push(300)
+data.push(400)
+data.push(500)
+data.pop()
+data.pop()
+data.pop()
+data.pop()
+data.pop()
+
+
+
+var myPromise = new Promise((resolve,reject)=>{
+    var condition = false
+    if(condition == true){
+        resolve("succesed")
+    }else{
+        reject("failed")
+    }
+})
+
+myPromise
+.then((result)=>{
+    console.log(result);
+})
+.catch((error)=>{
+    console.log(error);
+})
+.finally(()=>{
+    console.log("The code executed");
+})
