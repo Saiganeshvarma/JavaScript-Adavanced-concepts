@@ -29,22 +29,18 @@
 //     console.log("error in the url");
 // })
 
- async  function fetchData(){
+
+async function fecthData(){
     try{
-    var response = await fetch('https://fakestoreapi.com/products')
-    if(!response.ok){
-        console.log("invalid url");
-    }
-    var data = await response.json()
-    console.log(data);
-
-
-
+        var response = await fetch('https://fakestoreapi.com/products')
+        if(!response.ok){
+            console.log("error in the api");
+        }
+        var data = await response.json()
+        console.log(data);
     }catch{
-        console.log("erron in the data");
-
+        console.log("no data in the api");
     }
-
-
+    
 }
-fetchData()
+fecthData()

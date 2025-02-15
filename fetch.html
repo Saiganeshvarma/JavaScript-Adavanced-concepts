@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="h1"></h1>
+        <h2 id="h2"></h2>
+        <button onclick="fetchData()">click</button>
+    </div>
+    <script>
+
+        var h1 = document.getElementById("h1")
+        var h2= document.getElementById("h2")
+
+        async function fetchData(){
+            try{
+                var response = await fetch('https://fakestoreapi.com/products')
+                if(!response.ok){
+                    h2.textContent = "error in the api"
+                }
+                var data = await response.json()
+                h1.textContent = data[2].title
+            }catch{
+                h2.textContent = "invalid response"
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
