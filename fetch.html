@@ -5,46 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <div id="div">
-        <h1 id="h1"></h1>
-        <h2 id="h2"></h2>
+<body id="body">
+    <div id="div1">
+        <h1>produc details</h1>
         <button onclick="fetchData()">click</button>
+        <div>
+            <table id="productable" style="border: 1px;">
+                <thead>
+                <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Catergery</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+            </table>
+
+        </div>
     </div>
+
     <script>
-        var div = document.getElementById("div")
-        var h1 = document.getElementById("h1")
-        var h2= document.getElementById("h2")
+        var body = document.getElementById("body")
 
         async function fetchData(){
             try{
                 var response = await fetch('https://fakestoreapi.com/products')
                 if(!response.ok){
-                    h2.textContent = "error in the api"
+                    var newElement = document.createElement("h1")
+                    newElement.textContent = "error in the api"
+                    body.appendChild(newElement)
+
+
+
                 }
                 var data = await response.json()
-                data.forEach((item)=>{
-                    var id = document.createElement("p")
-                    var title = document.createElement("h4")
-                    var price = document.createElement("h4")
-                    var catergory = document.createElement("p")
-                    var image = document.createElement("img")
-                    id.textContent = item.id
+                var tablebody = document.getElementById("table-body")
+                for(var i = 0 ; i<data.length ; i++){
+                    var item = data[i]
+                    var tableRow = document.createElement("tr")
+                    var idCell = document.createElement("td")
+                    idCell.textContent = item.id
+                    var title = document.createElement("td")
                     title.textContent = item.title
+                    var price = document.createElement("td")
                     price.textContent = item.price
-                    image.src = item.image
-                    div.appendChild(id)
-                    div.appendChild(title)
-                    div.appendChild(price)
-                    div.appendChild(image)
+                    
 
+                    tablebody.appendChild(tableRow)
+                    tablebody.appendChild(idCell)
+                    tablebody.appendChild(title)
+                    tablebody.appendChild(price)
 
-                })
-
+                }
             }catch{
-                h2.textContent = "invalid response"
-            }
+                var newElements = document.createElement("p")
+                newElements.textContent = "no data"
+                body.appendChild(newElements)
 
+
+            }
         }
     </script>
     

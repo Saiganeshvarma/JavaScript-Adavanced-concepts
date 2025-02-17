@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body id="body">
+    <div id="div">
+        <h1>Product Details</h1>
+        <button onclick="fetchData()">Click</button>
+        <div>
+            <table id="table" border="1">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        var body = document.getElementById("body");
+
+        async function fetchData() {
+            try {
+                var response = await fetch('https://fakestoreapi.com/products');
+                if (!response.ok) {
+                    var newElement = document.createElement("h1");
+                    newElement.textContent = "Error in the API";
+                    body.appendChild(newElement);
+                    return;
+                }
+
+                var data = await response.json();
+
+                var tableBody = document.querySelector("#table tbody");
+                tableBody.innerHTML = ""; 
+
+                for (var i = 0; i < data.length; i++) {
+                    var item = data[i];
+                    var tableRow = document.createElement("tr");
+
+
+                    var idCell = document.createElement("td");
+                    idCell.textContent = item.id;
+
+                    var titleCell = document.createElement("td");
+                    titleCell.textContent = item.title;
+
+                    var priceCell = document.createElement("td");
+                    priceCell.textContent = `$${item.price.toFixed(2)}`;
+
+                    var categoryCell = document.createElement("td");
+                    categoryCell.textContent = item.category;
+
+                    var imageCell = document.createElement("td");
+                    var image = document.createElement("img");
+                    image.src = item.image;
+                    image.alt = "Product Image";
+                    image.style.width = "50px";
+                    image.style.height = "50px";
+                    imageCell.appendChild(image);
+
+
+                    tableRow.appendChild(idCell);
+                    tableRow.appendChild(titleCell);
+                    tableRow.appendChild(priceCell);
+                    tableRow.appendChild(categoryCell);
+                    tableRow.appendChild(imageCell);
+
+
+                    tableBody.appendChild(tableRow);
+                }
+            } catch (error) {
+                var newEl = document.createElement("h1");
+                newEl.textContent = "No data available";
+                body.appendChild(newEl);
+            }
+        }
+    </script>
+</body>
+</html>
